@@ -1,4 +1,4 @@
-FROM rust:slim-buster as builder
+FROM rust:alpine as builder
 WORKDIR /usr/src/bitly
 COPY . .
 RUN cargo install --path .
