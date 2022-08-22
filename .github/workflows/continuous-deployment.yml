@@ -3,7 +3,6 @@ on: [push]
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  DOCKER_TARGET_PLATFORM: linux/arm/v7
 
 jobs:
   Explore-GitHub-Actions:
@@ -45,5 +44,6 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64,linux/arm/v7
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
