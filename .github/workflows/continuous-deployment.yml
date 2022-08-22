@@ -3,6 +3,7 @@ on: [push]
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  DOCKER_TARGET_PLATFORM: linux/arm/v7
 
 jobs:
   Explore-GitHub-Actions:
