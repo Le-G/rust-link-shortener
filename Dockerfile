@@ -1,6 +1,8 @@
-FROM rust:alpine as builder
+FROM rust as builder
 WORKDIR /usr/src/bitly
-COPY . .
+COPY src/ src/
+COPY Cargo.toml Cargo.toml
+COPY Cargo.lock Cargo.lock
 RUN cargo install --path .
 
 FROM debian:buster-slim
