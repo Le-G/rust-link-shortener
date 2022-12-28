@@ -43,5 +43,5 @@ async fn main() {
     let routes = get.or(post).or(options);
 
     println!("Preparing to listen");
-    warp::serve(routes.with(cors)).run(([127, 0, 0, 1], 4242)).await;
+    warp::serve(routes.with(cors)).run(([0, 0, 0, 0], 4242)).await;
 }
