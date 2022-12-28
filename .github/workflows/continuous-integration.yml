@@ -1,0 +1,21 @@
+name: Continuous Integration
+on: [pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup rust
+        uses: actions-rs/toolchain@v1
+        with:
+            components: rustfmt, clippy
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        with:
+          command: check
